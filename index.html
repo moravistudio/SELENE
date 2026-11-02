@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selene — Hotel boutique &amp; spa en Barranco</title>
+<meta name="description" content="Selene, hotel boutique y spa frente al Pacífico en Barranco, Lima. Dieciocho suites con vista al mar, spa y cocina nikkei de autor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Selene — Hotel boutique &amp; spa en Barranco">
+<meta property="og:description" content="Demo de landing para hotel boutique y spa, desarrollada por Moravi Studio.">
+<meta property="og:image" content="https://moravistudio.github.io/SELENE/img/og.jpg">
+<meta property="og:url" content="https://moravistudio.github.io/SELENE/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= HERO / HEADER ================= -->
+<section class="hero" aria-label="Portada">
+  <!-- FOTO: img/hero.jpg (16:9). El velo violeta va encima. -->
+  <div class="foto hero__foto">
+    <span class="foto__etiqueta">Fotografía hero · 16:9 · ancho completo</span>
+    <img src="img/hero.jpg" alt="Selene, hotel boutique frente al mar en Barranco" onload="this.parentElement.classList.add('con-foto')" onerror="this.remove()">
+  </div>
+  <div class="hero__velo" aria-hidden="true"></div>
+  <span class="estrella" aria-hidden="true"></span>
+  <span class="estrella estrella--2" aria-hidden="true"></span>
+
+  <header class="header contenedor">
+    <a href="index.html" class="logo" aria-label="Selene, inicio"><span class="logo__nombre">SELENE</span><span class="logo__sub">HOTEL · SPA · BARRANCO</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#suites">Habitaciones</a>
+      <a href="#spa">Spa</a>
+      <a href="#mesa">Gastronomía</a>
+      <a href="#experiencias">Experiencias</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header__acciones">
+      <span class="idioma">ES <span>/ EN</span></span>
+      <a href="#reservar" class="boton-reservar">Reservar</a>
+      <button class="boton-menu" type="button" aria-label="Abrir menú">Menú</button>
+    </div>
+  </header>
+
+  <div class="hero__contenido contenedor">
+    <div class="hero__texto">
+      <h1 class="hero__titulo">Despierta sobre<br>el <em>Pacífico</em></h1>
+      <p class="hero__desc">Dieciocho suites con vista al mar, un spa de piedra volcánica y cocina nikkei de autor, en el corazón de Barranco.</p>
+      <div class="hero__ctas">
+        <a href="#reservar" class="boton boton--dorado">Reservar estancia <span aria-hidden="true">→</span></a>
+        <a href="#suites" class="enlace">Ver las suites</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__pie contenedor">
+    <form id="reservar" class="reserva" onsubmit="event.preventDefault()">
+      <div class="reserva__campo"><label for="llegada">Llegada</label><input id="llegada" type="text" value="Vie 14 nov"></div>
+      <div class="reserva__campo"><label for="salida">Salida</label><input id="salida" type="text" value="Dom 16 nov"></div>
+      <div class="reserva__campo"><label for="huespedes">Huéspedes</label><input id="huespedes" type="text" value="2 adultos"></div>
+      <button type="submit" class="reserva__boton">Ver disponibilidad</button>
+    </form>
+    <div class="contador" aria-hidden="true"><span class="contador__actual">01</span><span class="contador__barra"><span></span></span><span class="contador__total">04</span></div>
+  </div>
+</section>
+
+<main>
+<!-- ================= I. LA CASA ================= -->
+<section class="casa">
+  <div class="contenedor casa__inner">
+    <div class="casa__marca"><span class="casa__num">I.</span><span class="etiqueta">La casa</span></div>
+    <p class="casa__texto">Una casona de 1924 restaurada para quienes viajan sin prisa. Aquí el lujo no se anuncia: <em>se descubre</em> al apagar la luz.</p>
+  </div>
+</section>
+
+<!-- ================= II. SUITES ================= -->
+<section id="suites" class="suites">
+  <div class="contenedor suites__inner">
+    <div class="cabecera">
+      <div><span class="etiqueta">II. Suites</span><h2 class="titulo">Dieciocho maneras<br>de <em>no salir</em></h2></div>
+      <a href="#suites" class="enlace" data-demo="Demo: aquí se abriría la página con las 18 suites del hotel.">Todas las suites →</a>
+    </div>
+    <div class="suites__grid">
+      <article class="suite">
+        <div class="foto foto--clara"><span class="foto__etiqueta">Fotografía · 4:5</span><img src="img/suite-01.jpg" alt="Suite Malva" onload="this.parentElement.classList.add('con-foto')" onerror="this.remove()"></div>
+        <div class="suite__fila"><h3 class="suite__nombre">Suite Malva</h3><span class="suite__meta">48 m² · vista al mar</span></div>
+        <div class="suite__pie"><span>Desde <strong>USD 420</strong> / noche</span><a href="#reservar" data-demo="Demo: aquí se abriría la reserva de Suite Malva con tus fechas.">Reservar →</a></div>
+      </article>
+      <article class="suite">
+        <div class="foto foto--clara"><span class="foto__etiqueta">Fotografía · 4:5</span><img src="img/suite-02.jpg" alt="Estudio Ciruela" onload="this.parentElement.classList.add('con-foto')" onerror="this.remove()"></div>
+        <div class="suite__fila"><h3 class="suite__nombre">Estudio Ciruela</h3><span class="suite__meta">36 m² · terraza</span></div>
+        <div class="suite__pie"><span>Desde <strong>USD 310</strong> / noche</span><a href="#reservar" data-demo="Demo: aquí se abriría la reserva de Estudio Ciruela con tus fechas.">Reservar →</a></div>
+      </article>
+      <article class="suite">
+        <div class="foto foto--clara"><span class="foto__etiqueta">Fotografía · 4:5</span><img src="img/suite-03.jpg" alt="Penthouse Selene" onload="this.parentElement.classList.add('con-foto')" onerror="this.remove()"></div>
+        <div class="suite__fila"><h3 class="suite__nombre">Penthouse Selene</h3><span class="suite__meta">92 m² · jacuzzi</span></div>
+        <div class="suite__pie"><span>Desde <strong>USD 780</strong> / noche</span><a href="#reservar" data-demo="Demo: aquí se abriría la reserva de Penthouse Selene con tus fechas.">Reservar →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= III. SPA ================= -->
+<section id="spa" class="spa">
+  <div class="contenedor spa__inner">
+    <div class="spa__visual">
+      <div class="foto"><span class="foto__etiqueta">Fotografía · spa · 4:5</span><img src="img/spa.jpg" alt="Spa de Selene" onload="this.parentElement.classList.add('con-foto')" onerror="this.remove()"></div>
+      <div class="spa__marco" aria-hidden="true"></div>
+    </div>
+    <div class="spa__texto">
+      <div>
+        <span class="etiqueta etiqueta--dorada">III. Spa de piedra</span>
+        <h2 class="titulo">Piedra, agua<br>y <em>silencio</em></h2>
+        <p class="parrafo">Masajes, circuito de aguas y tratamientos faciales con productos naturales. Abierto todos los días hasta las 22:00.</p>
+      </div>
+      <div class="carta">
+        <div class="carta__item"><span class="carta__nombre">Masaje con piedras calientes</span><span class="carta__puntos"></span><span class="carta__duracion">90 min</span><span class="carta__precio">USD 160</span></div>
+        <div class="carta__item"><span class="carta__nombre">Facial hidratante</span><span class="carta__puntos"></span><span class="carta__duracion">60 min</span><span class="carta__precio">USD 110</span></div>
+        <div class="carta__item"><span class="carta__nombre">Spa en pareja</span><span class="carta__puntos"></span><span class="carta__duracion">120 min</span><span class="carta__precio">USD 290</span></div>
+      </div>
+      <a href="#spa" class="boton boton--borde-dorado" data-demo="Demo: aquí se abriría la agenda de tratamientos del spa.">Reservar tratamiento <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IV. LA MESA ================= -->
+<section id="mesa" class="mesa">
+  <div class="foto mesa__foto"><span class="foto__etiqueta">Fotografía · restaurante / bar · panorámica</span><img src="img/restaurante.jpg" alt="Restaurante de Selene" onload="this.parentElement.classList.add('con-foto')" onerror="this.remove()"></div>
+  <div class="mesa__velo" aria-hidden="true"></div>
+  <div class="contenedor mesa__inner">
+    <div><span class="etiqueta etiqueta--dorada">IV. La mesa</span><h2 class="titulo">Cocina nikkei<br>a la luz de <em>las velas</em></h2></div>
+    <div class="mesa__info"><p>Menú degustación de nueve tiempos y una barra de coctelería con destilados peruanos. Solo 24 cubiertos por noche.</p><a href="#mesa" class="boton boton--borde-dorado" data-demo="Demo: aquí se abriría la reserva de mesa del restaurante.">Reservar mesa <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- ================= V. EXPERIENCIAS ================= -->
+<section id="experiencias" class="experiencias">
+  <div class="contenedor experiencias__inner">
+    <div class="cabecera">
+      <div><span class="etiqueta etiqueta--dorada">V. Experiencias</span><h2 class="titulo">Tu estancia,<br><em>a medida</em></h2></div>
+      <p>Nuestro concierge diseña cada noche contigo, antes de que llegues.</p>
+    </div>
+    <div class="experiencias__grid">
+      <div class="experiencia"><span class="experiencia__num">01</span><h3>Velero al atardecer</h3><p>Dos horas por la bahía con champagne y ceviche a bordo.</p><a class="experiencia__enlace" href="https://wa.me/51940284018?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20un%20velero%20al%20atardecer" target="_blank" rel="noopener">Consultar →</a></div>
+      <div class="experiencia"><span class="experiencia__num">02</span><h3>Barranco de noche</h3><p>Galerías, peñas y bares secretos con un guía local.</p><a class="experiencia__enlace" href="https://wa.me/51940284018?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20Barranco%20de%20noche" target="_blank" rel="noopener">Consultar →</a></div>
+      <div class="experiencia"><span class="experiencia__num">03</span><h3>Cata privada</h3><p>Piscos de autor y chocolate de origen en la biblioteca.</p><a class="experiencia__enlace" href="https://wa.me/51940284018?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20una%20cata%20privada" target="_blank" rel="noopener">Consultar →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VI. RESERVAS ================= -->
+<section class="cta">
+  <div class="cta__aro cta__aro--1" aria-hidden="true"></div>
+  <div class="cta__aro cta__aro--2" aria-hidden="true"></div>
+  <div class="contenedor cta__inner">
+    <span class="etiqueta">VI. Reservas</span>
+    <h2 class="cta__titulo">Quédate<br><em>una noche más</em></h2>
+    <p class="parrafo">Reserva directa con desayuno incluido, late check-out y un tratamiento de bienvenida en el spa.</p>
+    <div class="cta__botones">
+      <a href="#reservar" class="boton boton--ciruela" data-demo="Demo: aquí se abriría la reserva directa con desayuno y late check-out incluidos.">Reservar directo <span aria-hidden="true">→</span></a>
+      <a href="https://wa.me/51940284018?text=Hola%2C%20quisiera%20hablar%20con%20el%20concierge%20de%20Selene" target="_blank" rel="noopener" class="boton boton--borde-oscuro">Hablar con concierge</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contacto" class="footer">
+  <div class="contenedor footer__inner">
+    <div class="footer__cols">
+      <div class="footer__col"><span class="footer__logo">SELENE</span><span class="footer__direccion">Hotel boutique &amp; spa<br>Barranco, Lima, Perú</span></div>
+      <div class="footer__col"><span class="etiqueta">Estancia</span><a href="#suites">Suites</a><a href="#spa">Spa</a><a href="#mesa">Gastronomía</a><a href="#experiencias">Experiencias</a></div>
+      <div class="footer__col"><span class="etiqueta">Contacto</span><span>+51 940 284 018</span><span>moravistudio10@gmail.com</span><a href="https://wa.me/51940284018?text=Hola%2C%20quisiera%20reservar%20en%20Selene" target="_blank" rel="noopener">WhatsApp concierge</a></div>
+      <div class="footer__col"><span class="etiqueta">Síguenos</span><a href="#contacto" data-demo="Demo: aquí iría el Instagram del hotel.">Instagram</a><a href="#contacto" data-demo="Demo: aquí iría el Pinterest del hotel.">Pinterest</a></div>
+    </div>
+    <div class="footer__marca" aria-hidden="true">SELENE</div>
+    <div class="footer__legal"><span>© 2026 Selene Hotel &amp; Spa</span><span>Privacidad · Términos · Libro de reclamaciones</span></div>
+    <p class="footer__firma">Demo desarrollada por <a href="https://moravistudio.com" target="_blank" rel="noopener">Moravi Studio</a></p>
+  </div>
+</footer>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+<script>
+(function () {
+  var aviso = document.getElementById("aviso"), t;
+  function mostrar(m) { aviso.textContent = m; aviso.classList.add("visible"); clearTimeout(t); t = setTimeout(function () { aviso.classList.remove("visible"); }, 3800); }
+  Array.prototype.forEach.call(document.querySelectorAll("[data-demo]"), function (el) {
+    el.addEventListener("click", function (e) { e.preventDefault(); mostrar(el.getAttribute("data-demo")); });
+  });
+  var f = document.getElementById("reservar");
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    mostrar("Demo: aquí se mostrarían las suites disponibles del " + document.getElementById("llegada").value + " al " + document.getElementById("salida").value + " para " + document.getElementById("huespedes").value + ".");
+  });
+})();
+</script>
+</body>
+</html>

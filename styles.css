@@ -1,0 +1,280 @@
+/* =========================================================
+   SELENE — Hotel boutique & spa
+   Fuente de verdad del diseño. Ver CLAUDE.md antes de editar.
+   ========================================================= */
+
+/* ---------- 1. TOKENS (no cambiar valores) ---------- */
+:root {
+  /* Paleta */
+  --ciruela: #2A0F3D;
+  --ciruela-profundo: #170821;
+  --violeta: #4B2A6F;
+  --lavanda: #7B5BA7;
+  --marfil: #E5E1F2;
+  --dorado: #D9B97C;
+  --dorado-luz: #E6CC97;
+  --dorado-sombra: #C4A161;
+
+  /* Transparencias */
+  --marfil-85: rgba(229, 225, 242, 0.85);
+  --marfil-75: rgba(229, 225, 242, 0.75);
+  --marfil-20: rgba(229, 225, 242, 0.2);
+  --marfil-14: rgba(229, 225, 242, 0.14);
+  --ciruela-80: rgba(42, 15, 61, 0.8);
+  --ciruela-75: rgba(42, 15, 61, 0.75);
+  --ciruela-18: rgba(42, 15, 61, 0.18);
+
+  /* Velos sobre fotos (van ENCIMA de la imagen y tiñen cualquier foto con la paleta) */
+  --velo-hero:
+    radial-gradient(ellipse 50% 60% at 78% 32%, rgba(123, 91, 167, 0.1) 0%, rgba(123, 91, 167, 0) 70%),
+    linear-gradient(90deg, rgba(42, 15, 61, 0.94) 0%, rgba(42, 15, 61, 0.7) 28%, rgba(42, 15, 61, 0) 56%, rgba(42, 15, 61, 0) 100%),
+    linear-gradient(0deg, rgba(23, 8, 33, 0.9) 0%, rgba(23, 8, 33, 0) 34%);
+  --velo-mesa: linear-gradient(0deg, rgba(23, 8, 33, 0.97) 0%, rgba(23, 8, 33, 0.88) 24%, rgba(42, 15, 61, 0.5) 50%, rgba(42, 15, 61, 0.1) 100%);
+
+  /* Fondos */
+  --fondo-spa: radial-gradient(ellipse 60% 70% at 85% 20%, rgba(123, 91, 167, 0.45) 0%, rgba(123, 91, 167, 0) 70%), linear-gradient(160deg, var(--violeta) 0%, var(--ciruela) 60%, var(--ciruela-profundo) 100%);
+  --fondo-footer: radial-gradient(ellipse 50% 70% at 15% 0%, rgba(75, 42, 111, 0.6) 0%, rgba(75, 42, 111, 0) 70%), var(--ciruela-profundo);
+
+  /* Botones */
+  --boton-dorado: linear-gradient(180deg, var(--dorado-luz) 0%, var(--dorado) 55%, var(--dorado-sombra) 100%);
+  --boton-ciruela: linear-gradient(160deg, var(--violeta) 0%, var(--ciruela) 100%);
+
+  /* Marcadores de foto (desaparecen cuando entra la imagen) */
+  --foto-oscura: #5C5A60;
+  --foto-clara: #CFCDD3;
+
+  /* Tipografía */
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --cursiva: 'Cormorant Garamond', Georgia, serif;
+  --texto: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --ancho: 1440px;
+  --gutter: 48px;
+}
+
+/* ---------- 2. BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--texto); color: var(--marfil); background: var(--ciruela-profundo); -webkit-font-smoothing: antialiased; }
+main, footer { display: block; overflow-x: clip; }
+img { display: block; max-width: 100%; }
+a { color: inherit; transition: opacity .2s; }
+a:hover { opacity: .8; }
+h1, h2, h3, p { margin: 0; }
+button, input { font-family: inherit; }
+em { font-family: var(--cursiva); font-style: italic; }
+.contenedor { max-width: var(--ancho); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+.etiqueta { font-size: 12px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; }
+.etiqueta--dorada { color: var(--dorado); }
+.titulo { font-family: var(--display); font-weight: 500; font-size: clamp(48px, 6vw, 92px); line-height: 0.95; letter-spacing: -1px; }
+.titulo em { color: var(--dorado); }
+.parrafo { font-size: 17px; line-height: 1.75; font-weight: 300; }
+:focus-visible { outline: 2px solid var(--dorado); outline-offset: 3px; }
+
+/* ---------- 3. BOTONES ---------- */
+.boton { display: inline-flex; align-items: center; gap: 14px; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; padding: 19px 32px; border-radius: 999px; text-decoration: none; border: none; cursor: pointer; transition: transform .25s ease, filter .25s ease; }
+.boton:hover { opacity: 1; transform: translateY(-2px); filter: brightness(1.05); }
+.boton--dorado { background: linear-gradient(180deg, var(--dorado) 0%, var(--dorado-sombra) 100%); color: var(--ciruela); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45); transition: filter .3s ease; }
+.boton--dorado:hover { transform: none; filter: brightness(1.07) saturate(1.08); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 22px 0 rgba(217, 185, 124, 0.26); }
+.boton--ciruela { background: var(--boton-ciruela); color: var(--marfil); box-shadow: 0 20px 40px -18px rgba(42, 15, 61, 0.7); }
+.boton--borde-dorado { border: 1px solid rgba(217, 185, 124, 0.55); background: rgba(217, 185, 124, 0.12); color: var(--dorado-luz); font-weight: 500; padding: 17px 28px; transition: background .3s ease, color .3s ease, border-color .3s ease; }
+.boton--borde-dorado:hover { transform: none; filter: none; background: var(--boton-dorado); border-color: var(--dorado); color: var(--ciruela); }
+.boton--borde-oscuro { border: 1px solid var(--ciruela); color: var(--ciruela); font-weight: 500; padding: 18px 30px; transition: background .3s ease, color .3s ease; }
+.boton--borde-oscuro:hover { transform: none; filter: none; background: var(--ciruela); color: var(--marfil); }
+.enlace { font-size: 14px; font-weight: 500; letter-spacing: 1px; text-decoration: none; padding: 8px 0; border-bottom: 1px solid currentColor; }
+
+/* ---------- 4. FOTOS ---------- */
+/* Cada .foto muestra un gris hasta que exista el archivo en /img; la foto lo cubre (object-fit: cover). */
+.foto { position: relative; overflow: hidden; background: var(--foto-oscura); }
+.foto--clara { background: var(--foto-clara); }
+.foto > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.foto__etiqueta { position: absolute; left: 20px; bottom: 18px; z-index: 1; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(229, 225, 242, 0.6); }
+.foto--clara .foto__etiqueta { color: rgba(42, 15, 61, 0.55); }
+.con-foto > .foto__etiqueta { display: none; }
+
+/* ---------- 5. HERO / HEADER ---------- */
+.hero { position: relative; min-height: 760px; display: flex; flex-direction: column; overflow: hidden; }
+.hero__foto { position: absolute; inset: 0; }
+.hero__foto .foto__etiqueta { left: auto; right: var(--gutter); bottom: auto; top: 46%; font-size: 11px; letter-spacing: 3px; }
+.hero__velo { position: absolute; inset: 0; background: var(--velo-hero); pointer-events: none; }
+
+/* Estrellas fugaces: dos trazos de luz que cruzan el cielo oscuro y se apagan antes de llegar a la casa (detrás del texto) */
+.estrella { --dx: 190px; --dy: 85px; position: absolute; z-index: 1; left: 26%; top: 12%; width: 150px; height: 1.5px; border-radius: 2px; pointer-events: none; opacity: 0; background: linear-gradient(90deg, rgba(229, 225, 242, 0) 0%, rgba(229, 225, 242, 0.85) 100%); filter: drop-shadow(0 0 5px rgba(229, 225, 242, 0.6)); animation: fugaz 14s ease-in infinite -9s; }
+.estrella::after { content: ""; position: absolute; right: 0; top: 50%; width: 3px; height: 3px; margin-top: -1.5px; border-radius: 50%; background: var(--marfil); box-shadow: 0 0 8px 2px rgba(229, 225, 242, 0.7); }
+.estrella--2 { --dx: 150px; --dy: 67px; left: 36%; top: 17%; width: 110px; animation-duration: 14s; animation-delay: -2s; }
+@keyframes fugaz {
+  0%, 85% { opacity: 0; transform: translate(0, 0) rotate(24deg); }
+  87% { opacity: 1; }
+  93% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(24deg); }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(24deg); }
+}
+@media (max-width: 760px) { .estrella { width: 90px; --dx: 110px; --dy: 49px; left: 18%; } .estrella--2 { display: none; } }
+@media (prefers-reduced-motion: reduce) { .estrella { display: none; } }
+
+.header { position: relative; z-index: 2; width: 100%; padding-top: 30px; padding-bottom: 30px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { text-decoration: none; display: flex; flex-direction: column; gap: 6px; line-height: 1; }
+.logo__nombre { font-family: var(--display); font-size: 36px; letter-spacing: 11px; line-height: 1; }
+.logo__img { height: 41px; width: auto; align-self: flex-start; }
+.logo__sub { font-size: 9px; font-weight: 500; letter-spacing: 3.5px; color: var(--dorado); white-space: nowrap; }
+.nav { display: flex; flex-wrap: wrap; gap: 34px; font-size: 14px; letter-spacing: 0.5px; }
+.nav a { text-decoration: none; padding: 6px 0; }
+.header__acciones { display: flex; align-items: center; gap: 22px; font-size: 13px; }
+.idioma { letter-spacing: 1px; font-weight: 600; font-size: 14px; color: var(--marfil); }
+.idioma span { opacity: 0.7; font-weight: 500; }
+.boton-reservar { text-decoration: none; padding: 13px 24px; border-radius: 999px; border: 1px solid rgba(217, 185, 124, 0.55); background: rgba(217, 185, 124, 0.12); color: var(--dorado-luz); font-weight: 500; letter-spacing: 1px; transition: background .3s ease, color .3s ease, border-color .3s ease; }
+.boton-reservar:hover { opacity: 1; background: var(--boton-dorado); border-color: var(--dorado); color: var(--ciruela); }
+.boton-menu { display: none; background: none; border: 1px solid rgba(229, 225, 242, 0.4); color: var(--marfil); border-radius: 999px; padding: 12px 18px; font-size: 13px; letter-spacing: 1px; cursor: pointer; }
+
+.hero__contenido { position: relative; z-index: 2; flex: 1; width: 100%; padding-top: 36px; display: flex; align-items: flex-start; }
+.hero__texto { max-width: 660px; display: flex; flex-direction: column; gap: 30px; align-items: flex-start; }
+.hero__eyebrow { display: flex; align-items: center; gap: 16px; letter-spacing: 4px; }
+.hero__titulo { font-family: var(--display); font-weight: 500; font-size: clamp(56px, 7vw, 108px); line-height: 0.98; letter-spacing: -0.5px; }
+.hero__titulo em { color: var(--dorado); }
+.hero__desc { font-size: 18px; line-height: 1.7; font-weight: 300; color: var(--marfil-85); max-width: 480px; }
+.hero__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.hero__ctas .enlace { font-size: 15px; letter-spacing: 0; border-bottom: none; }
+
+.hero__pie { position: relative; z-index: 2; width: 100%; padding-top: 40px; padding-bottom: 40px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px; }
+.reserva { flex: 0 1 900px; display: flex; flex-wrap: wrap; align-items: stretch; background: rgba(42, 15, 61, 0.55); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(217, 185, 124, 0.35); border-radius: 20px; overflow: hidden; }
+.reserva__campo { flex: 1 1 160px; padding: 16px 22px; display: flex; flex-direction: column; gap: 6px; border-right: 1px solid var(--marfil-14); }
+.reserva__campo:nth-child(3) { border-right: none; }
+.reserva__campo label { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--dorado); }
+.reserva__campo input { width: 100%; min-width: 0; font-size: 16px; color: var(--marfil); background: transparent; border: none; padding: 2px 0; }
+.reserva__campo input:focus { outline: none; }
+.reserva__boton { flex: 0 0 auto; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 0 34px; min-height: 76px; border: none; background: var(--marfil); color: var(--ciruela); cursor: pointer; }
+.contador { display: flex; align-items: center; gap: 18px; font-size: 12px; letter-spacing: 2px; }
+.contador__actual { font-family: var(--display); font-size: 22px; letter-spacing: 0; }
+.contador__barra { position: relative; width: 120px; height: 1px; background: rgba(229, 225, 242, 0.3); }
+.contador__barra span { position: absolute; left: 0; top: -1px; width: 30px; height: 3px; background: var(--dorado); }
+.contador__total { color: rgba(229, 225, 242, 0.7); }
+
+/* ---------- 6. LA CASA ---------- */
+.casa { background: var(--marfil); color: var(--ciruela); }
+.casa__inner { padding-top: 150px; padding-bottom: 150px; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-end; }
+.casa__marca { flex: 1 1 240px; display: flex; flex-direction: column; gap: 16px; }
+.casa__num { font-family: var(--display); font-size: 18px; color: var(--violeta); }
+.casa__marca .etiqueta { color: var(--ciruela-75); }
+.casa__texto { flex: 4 1 760px; font-family: var(--display); font-size: clamp(36px, 4.4vw, 68px); line-height: 1.12; letter-spacing: -0.5px; }
+.casa__texto em { color: var(--violeta); }
+
+/* ---------- 7. SUITES ---------- */
+.suites { background: var(--marfil); color: var(--ciruela); border-top: 1px solid rgba(42, 15, 61, 0.12); }
+.suites__inner { padding-top: 120px; padding-bottom: 150px; display: flex; flex-direction: column; gap: 56px; }
+.cabecera { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; }
+.cabecera > div { display: flex; flex-direction: column; gap: 14px; }
+.suites .etiqueta { color: var(--ciruela-75); }
+.suites .titulo em { color: var(--violeta); }
+.suites__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; align-items: start; }
+.suite { display: flex; flex-direction: column; gap: 18px; }
+.suite:nth-child(2) { margin-top: 80px; }
+.suite:nth-child(3) { margin-top: 30px; }
+.suite .foto { aspect-ratio: 4 / 5; border-radius: 4px; }
+.suite__fila { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.suite__nombre { font-family: var(--display); font-weight: 400; font-size: 32px; }
+.suite__meta { font-size: 13px; color: var(--ciruela-75); }
+.suite__pie { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid var(--ciruela-18); font-size: 15px; }
+.suite__pie strong { font-weight: 600; }
+.suite__pie a { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; color: var(--violeta); }
+
+/* ---------- 8. SPA ---------- */
+.spa { position: relative; overflow: hidden; background: var(--fondo-spa); }
+.spa__inner { padding-top: 150px; padding-bottom: 150px; display: flex; flex-wrap: wrap; gap: 80px; align-items: center; }
+.spa__visual { flex: 1 1 460px; min-width: 0; position: relative; }
+.spa__visual .foto { aspect-ratio: 4 / 5; border-radius: 6px; box-shadow: 0 60px 100px -50px rgba(0, 0, 0, 0.8); }
+.spa__marco { position: absolute; inset: -18px 18px 18px -18px; border: 1px solid rgba(217, 185, 124, 0.55); border-radius: 6px; pointer-events: none; z-index: 1; }
+.spa__texto { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 36px; }
+.spa__texto > div:first-child { display: flex; flex-direction: column; gap: 18px; }
+.spa__texto .parrafo { color: rgba(229, 225, 242, 0.82); max-width: 460px; }
+.carta { display: flex; flex-direction: column; border-top: 1px solid var(--marfil-20); }
+.carta__item { display: flex; align-items: baseline; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--marfil-14); }
+.carta__nombre { font-family: var(--display); font-size: 24px; }
+.carta__puntos { flex: 1; border-bottom: 1px dotted rgba(217, 185, 124, 0.5); transform: translateY(-5px); }
+.carta__duracion { font-size: 14px; color: var(--marfil-75); }
+.carta__precio { font-size: 15px; font-weight: 500; color: var(--dorado); min-width: 80px; text-align: right; }
+.spa__texto > .boton { align-self: flex-start; }
+
+/* ---------- 9. LA MESA ---------- */
+.mesa { position: relative; min-height: 640px; display: flex; align-items: flex-end; overflow: hidden; }
+.mesa__foto { position: absolute; inset: 0; }
+.mesa__foto .foto__etiqueta { left: auto; right: var(--gutter); bottom: auto; top: 40px; }
+.mesa__velo { position: absolute; inset: 0; background: var(--velo-mesa); pointer-events: none; }
+.mesa__inner { position: relative; z-index: 2; width: 100%; padding-bottom: 34px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 40px; }
+.mesa__inner > div:first-child { display: flex; flex-direction: column; gap: 18px; max-width: 720px; }
+.mesa__inner .titulo { font-size: clamp(48px, 6vw, 96px); }
+.mesa__info { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; max-width: 360px; }
+.mesa__info p { font-size: 16px; line-height: 1.7; font-weight: 300; color: var(--marfil-85); }
+.mesa__info .enlace { color: var(--dorado); }
+
+/* ---------- 10. EXPERIENCIAS ---------- */
+.experiencias { background: var(--ciruela-profundo); }
+.experiencias__inner { padding-top: 150px; padding-bottom: 150px; display: flex; flex-direction: column; gap: 56px; }
+.experiencias .cabecera p { max-width: 380px; font-size: 16px; line-height: 1.7; font-weight: 300; color: rgba(229, 225, 242, 0.8); }
+.experiencias__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); border-top: 1px solid var(--marfil-20); }
+.experiencia { padding: 36px 32px 8px; border-left: 1px solid var(--marfil-14); display: flex; flex-direction: column; gap: 14px; }
+.experiencia:first-child { padding-left: 0; border-left: none; }
+.experiencia:last-child { padding-right: 0; }
+.experiencia__num { font-family: var(--display); font-size: 56px; line-height: 1; color: var(--lavanda); }
+.experiencia h3 { font-family: var(--display); font-weight: 400; font-size: 28px; }
+.experiencia p { font-size: 15px; line-height: 1.7; font-weight: 300; color: rgba(229, 225, 242, 0.78); }
+
+/* ---------- 11. RESERVAS (CTA) ---------- */
+.cta { position: relative; overflow: hidden; background: var(--marfil); color: var(--ciruela); }
+.cta__aro { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 999px; pointer-events: none; }
+.cta__aro--1 { width: 720px; height: 720px; border: 1px solid rgba(75, 42, 111, 0.25); }
+.cta__aro--2 { width: 520px; height: 520px; border: 1px solid rgba(217, 185, 124, 0.7); }
+.cta__inner { position: relative; padding-top: 170px; padding-bottom: 170px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; }
+.cta .etiqueta { color: var(--ciruela-75); }
+.cta__titulo { font-family: var(--display); font-weight: 400; font-size: clamp(52px, 7vw, 116px); line-height: 0.95; letter-spacing: -1.5px; }
+.cta__titulo em { color: var(--violeta); }
+.cta .parrafo { color: var(--ciruela-80); max-width: 460px; }
+.cta__botones { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+/* ---------- 12. FOOTER ---------- */
+.footer { background: var(--fondo-footer); }
+.footer__inner { padding-top: 96px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 64px; }
+.footer__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; font-size: 15px; }
+.footer__col { display: flex; flex-direction: column; gap: 12px; }
+.footer__col span { color: rgba(229, 225, 242, 0.85); }
+.footer__col a { text-decoration: none; }
+.footer__col .etiqueta { color: var(--dorado); }
+.footer__logo { font-family: var(--display); font-size: 34px; letter-spacing: 8px; color: var(--marfil) !important; }
+.footer__direccion { font-weight: 300; line-height: 1.7; color: rgba(229, 225, 242, 0.78) !important; }
+.footer__marca { font-family: var(--display); font-size: clamp(88px, 17vw, 260px); line-height: 0.8; letter-spacing: 0.08em; text-align: center; background: linear-gradient(180deg, var(--lavanda) 0%, rgba(123, 91, 167, 0.15) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; white-space: nowrap; }
+.footer__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid var(--marfil-14); padding-top: 22px; font-size: 12px; letter-spacing: 1px; color: rgba(229, 225, 242, 0.7); }
+
+.footer__firma { text-align: center; font-size: 13px; letter-spacing: 0.5px; color: rgba(229, 225, 242, 0.7); margin-top: -32px; }
+.footer__firma a { color: #1E8CFF; font-weight: 600; text-decoration: none; }
+.footer__firma a:hover { opacity: 1; text-decoration: underline; }
+
+/* ---------- AVISO DE DEMO + ENLACE DE EXPERIENCIAS ---------- */
+.experiencia__enlace { align-self: flex-start; margin-top: 10px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; color: var(--dorado); }
+.aviso { position: fixed; left: 50%; bottom: 28px; z-index: 50; max-width: min(92vw, 520px); padding: 14px 24px; border-radius: 18px; background: var(--ciruela); border: 1px solid rgba(217, 185, 124, 0.55); color: var(--marfil); font-size: 14px; line-height: 1.5; text-align: center; opacity: 0; transform: translate(-50%, 20px); pointer-events: none; transition: opacity .3s ease, transform .3s ease; box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.6); }
+.aviso.visible { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- 13. RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .suite:nth-child(2), .suite:nth-child(3) { margin-top: 0; }
+  .experiencia, .experiencia:first-child, .experiencia:last-child { padding: 28px 0 8px; border-left: none; border-top: 1px solid var(--marfil-14); }
+  .experiencia:first-child { border-top: none; }
+}
+@media (max-width: 760px) {
+  :root { --gutter: 20px; }
+  .nav, .idioma { display: none; }
+  .boton-menu { display: inline-flex; }
+  .header { padding-top: 22px; padding-bottom: 22px; }
+  .logo__nombre { font-size: 28px; letter-spacing: 8px; }
+  .logo__sub { font-size: 8px; letter-spacing: 2.6px; }
+  .hero { min-height: 820px; }
+  .hero__foto .foto__etiqueta { display: none; }
+  .reserva__campo { flex: 1 1 45%; border-right: none; border-bottom: 1px solid var(--marfil-14); }
+  .reserva__boton { flex: 1 1 100%; min-height: 60px; }
+  .contador { display: none; }
+  .casa__inner, .suites__inner, .spa__inner, .experiencias__inner { padding-top: 96px; padding-bottom: 96px; gap: 48px; }
+  .cta__inner { padding-top: 120px; padding-bottom: 120px; }
+  .cta__aro--1 { width: 420px; height: 420px; }
+  .cta__aro--2 { width: 320px; height: 320px; }
+  .carta__item { flex-wrap: wrap; }
+  .carta__puntos { display: none; }
+  .carta__nombre { flex: 1 1 100%; font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
