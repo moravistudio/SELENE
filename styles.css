@@ -242,9 +242,8 @@ em { font-family: var(--cursiva); font-style: italic; }
 .footer__marca { font-family: var(--display); font-size: clamp(88px, 17vw, 260px); line-height: 0.8; letter-spacing: 0.08em; text-align: center; background: linear-gradient(180deg, var(--lavanda) 0%, rgba(123, 91, 167, 0.15) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; white-space: nowrap; }
 .footer__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid var(--marfil-14); padding-top: 22px; font-size: 12px; letter-spacing: 1px; color: rgba(229, 225, 242, 0.7); }
 
-.footer__firma { text-align: center; font-size: 13px; letter-spacing: 0.5px; color: rgba(229, 225, 242, 0.7); margin-top: -32px; }
-.footer__firma a { color: #1E8CFF; font-weight: 600; text-decoration: none; }
-.footer__firma a:hover { opacity: 1; text-decoration: underline; }
+.footer__firma { text-align: center; font-size: 12px; line-height: 1.5; letter-spacing: 0; color: rgba(229, 225, 242, 0.8); margin-top: -32px; }
+.footer__firma a { color: rgba(229, 225, 242, 0.95); font-weight: 400; text-decoration: underline; text-underline-offset: 2px; }
 
 /* ---------- AVISO DE DEMO + ENLACE DE EXPERIENCIAS ---------- */
 .experiencia__enlace { align-self: flex-start; margin-top: 10px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; color: var(--dorado); }
